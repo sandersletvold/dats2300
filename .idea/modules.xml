@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1.1AlgoritmerOgEffektivitet/1.1AlgoritmerOgEffektivitet.iml" filepath="$PROJECT_DIR$/1.1AlgoritmerOgEffektivitet/1.1AlgoritmerOgEffektivitet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.2NestStorsteVerdi/1.2NestStorsteVerdi.iml" filepath="$PROJECT_DIR$/1.2NestStorsteVerdi/1.2NestStorsteVerdi.iml" />
       <module fileurl="file://$PROJECT_DIR$/DATS2300.iml" filepath="$PROJECT_DIR$/DATS2300.iml" />
     </modules>
   </component>
