@@ -134,4 +134,64 @@ public class Tabell {
 
         return new int[] {m,nm};    // n i posisjon 0, nm i posisjon 1
     }
+
+    // Oppgave 1.2.5 3)
+    public static int[] nestMin(int[] a) {
+        int n = a.length;     // tabellens lengde
+        if (n < 2) throw      // må ha minst to verdier
+                new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+
+        int m = 0;      // m er posisjonen til minste verdi
+        int nm = 1;     // nm er posisjonen til nest minste verdi
+
+        // bytter om m og nm hvis a[1] er mindre enn a[0]
+        if (a[1] < a[0]) {
+            m = 1; nm = 0;
+        }
+
+        int minVerdi = a[m];                // minst verdi
+        int nestMinVerdi = a[nm];           // nest minst verdi
+
+        for (int i = 2; i < n; i++) {
+            if (a[i] < nestMinVerdi) {
+                if (a[i] < minVerdi) {
+                    nm = m;
+                    nestMinVerdi = minVerdi;     // ny nest minst
+
+                    m = i;
+                    minVerdi = a[m];              // ny minst
+                } else {
+                    nm = i;
+                    nestMinVerdi = a[nm];         // ny nest minst
+                }
+            }
+        } // for
+        return new int[] {m,nm};    // n i posisjon 0, nm i posisjon 1
+    }
+
+    // Oppgave 1.2.13
+    // Oppgaven mangler at den skal returnere indexene, og ikke verdiene
+    public static int[] turnering(int[] a) {   // en turnering
+        int n = a.length;                // for å forenkle notasjonen
+
+        if (n < 2) // må ha minst to verdier!
+            throw new IllegalArgumentException("a.length(" + n + ") < 2!");
+
+        int[] b = new int[2*n];          // turneringstreet
+        System.arraycopy(a,0,b,n,n);     // legger a bakerst i b
+
+        for (int k = 2*n-2; k > 1; k -= 2)   // lager turneringstreet
+            b[k/2] = Math.max(b[k],b[k+1]);
+
+        int maksverdi = b[1], nestmaksverdi = Integer.MIN_VALUE;
+
+        for (int m = 2*n - 1, k = 2; k < m; k *= 2) {
+            int tempverdi = b[k+1];  // ok hvis maksverdi er b[k]
+            if (maksverdi != b[k]) { tempverdi = b[k]; k++; }
+            if (tempverdi > nestmaksverdi) nestmaksverdi = tempverdi;
+        }
+
+        return new int[] {maksverdi,nestmaksverdi}; // størst og nest størst
+
+    }
 }
