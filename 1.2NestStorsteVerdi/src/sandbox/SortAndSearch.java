@@ -1,4 +1,4 @@
-package nest_storste_verdi;
+package sandbox;
 
 public class SortAndSearch {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package algoritmer_og_effektivitet;
 
-public class A115 {
+public class _1_1_5 {
     public static void main(String[] args) {
         int[] a = {6};
         System.out.println(maks(a));

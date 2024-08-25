@@ -1,4 +1,4 @@
-package nest_storste_verdi;
+package sandbox;
 
 import java.util.Random;
 

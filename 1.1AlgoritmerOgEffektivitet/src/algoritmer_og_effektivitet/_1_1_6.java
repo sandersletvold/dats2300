@@ -1,6 +1,6 @@
 package algoritmer_og_effektivitet;
 
-public class A116 {
+public class _1_1_6 {
     public static void main(String[] args) {
         // Oppgave 1
         /* I en tabell med n (n > 1) forskjellige tall er i gjennomsnitt

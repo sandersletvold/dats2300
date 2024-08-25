@@ -1,6 +1,6 @@
 package algoritmer_og_effektivitet;
 
-public class A114 {
+public class _1_1_4 {
     public static void main(String[] args) {
 
     }

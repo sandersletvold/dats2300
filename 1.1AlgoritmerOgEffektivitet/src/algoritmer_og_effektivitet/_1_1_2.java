@@ -1,6 +1,6 @@
 package algoritmer_og_effektivitet;
 
-public class A112 {
+public class _1_1_2 {
     public static void main(String[] args) {
         int[] tabell = {3,6,1,5,8,1,6,9,8,9};
         System.out.println("Oppgave 2: "+min(tabell));

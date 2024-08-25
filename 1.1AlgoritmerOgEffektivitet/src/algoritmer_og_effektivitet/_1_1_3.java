@@ -2,7 +2,7 @@ package algoritmer_og_effektivitet;
 
 import java.util.Arrays;
 
-public class A113 {
+public class _1_1_3 {
     public static void main(String[] args) {
         int[] tabell = {6,3};
         int fakultet = 5;
