@@ -5,22 +5,36 @@ import java.util.Random;
 
 public class _1_3_3 {
     public static void main(String[] args) {
-        System.out.println(boble(randPerm(10)));
+        int[] a = randPerm(10);
+        System.out.println(Arrays.toString(a));
+        boblesortering(a);
+        System.out.println(Arrays.toString(a));
     }
     // Oppgave 1
-    public static int boble(int[] a)      // legges i samleklassen Tabell
+    public static void boblesortering(int[] a) {
+        for (int n = a.length; n > 1; ) {          // n er intervallgrense
+            int byttindeks = 0;                      // hjelpevariabel
+            for (int i = 1; i < n; i++) {           // går fra 1 til n
+                if (a[i - 1] > a[i]) {                // sammenligner
+                    bytt(a, i - 1, i);                   // bytter
+                    byttindeks = i;                      // høyre indeks i ombyttingen
+                }
+            }
+            n = byttindeks;                          // ny intervallgrense
+        }
+    }
+
+    public static void boblesortering1(int[] a)     // hører til klassen Tabell
     {
-        int antall = 0;                     // antall ombyttinger i tabellen
-        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        for (int n = a.length; n > 1; n--)           // n reduseres med 1 hver gang
         {
-            if (a[i - 1] > a[i])              // sammenligner to naboverdier
+            for (int i = 1; i < n; i++)                // går fra 1 til n
             {
-                System.out.println(a[i-1]+" byttet med "+a[i]);
-                bytt(a, i - 1, i);              // bytter om to naboverdier
-                antall++;                       // teller opp ombyttingene
+                if (a[i - 1] > a[i]) {
+                    bytt(a, i - 1, i);  // sammenligner/bytter
+                }
             }
         }
-        return antall;                      // returnerer
     }
 
     public static void bytt(int[] a, int i, int j) {
@@ -45,8 +59,6 @@ public class _1_3_3 {
         return a;                        // permutasjonen returneres
     }
 
-
-    // Oppgave 2
-
     // Oppgave 3
+    // Lag motsatt boblesortering metode som går fra høyre til venstre
 }
