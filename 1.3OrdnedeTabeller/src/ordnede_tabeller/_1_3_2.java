@@ -6,8 +6,8 @@ public class _1_3_2 {
     // Dette blir 14 inversjoner
 
     // Oppgave 2
-    // 1,3,2,10,9,8,7,6,5,4
-    // 1+6+5+4+3+2+1 blir tilsammen 22 inversjoner
+    // 10+9+1+2+8+3+4+5+6+7
+    // 9+8+5 blir tilsammen 22 inversjoner
 
     // 10+9+1+8+2+3+4+5+6+7
     // 9+8+6 blir tilsammen 23 inversjoner

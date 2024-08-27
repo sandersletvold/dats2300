@@ -5,18 +5,16 @@ import java.util.Random;
 
 public class _1_3_3 {
     public static void main(String[] args) {
-        int[] a = randPerm(10);
-        System.out.println(Arrays.toString(a));
+        int[] a = randPerm(1000);
         boblesortering(a);
-        System.out.println(Arrays.toString(a));
     }
     // Oppgave 1
     public static void boblesortering(int[] a) {
-        for (int n = a.length; n > 1; ) {          // n er intervallgrense
+        for (int n = a.length; n > 1; ) {            // n er intervallgrense
             int byttindeks = 0;                      // hjelpevariabel
-            for (int i = 1; i < n; i++) {           // går fra 1 til n
-                if (a[i - 1] > a[i]) {                // sammenligner
-                    bytt(a, i - 1, i);                   // bytter
+            for (int i = 1; i < n; i++) {              // går fra 1 til n
+                if (a[i - 1] > a[i]) {                   // sammenligner
+                    bytt(a, i - 1, i); // bytter
                     byttindeks = i;                      // høyre indeks i ombyttingen
                 }
             }
@@ -24,12 +22,9 @@ public class _1_3_3 {
         }
     }
 
-    public static void boblesortering1(int[] a)     // hører til klassen Tabell
-    {
-        for (int n = a.length; n > 1; n--)           // n reduseres med 1 hver gang
-        {
-            for (int i = 1; i < n; i++)                // går fra 1 til n
-            {
+    public static void boblesortering2(int[] a) {     // hører til klassen Tabell
+        for (int n = a.length; n > 1; n--) {          // n reduseres med 1 hver gang
+            for (int i = 1; i < n; i++) {                // går fra 1 til n
                 if (a[i - 1] > a[i]) {
                     bytt(a, i - 1, i);  // sammenligner/bytter
                 }
@@ -59,6 +54,5 @@ public class _1_3_3 {
         return a;                        // permutasjonen returneres
     }
 
-    // Oppgave 3
-    // Lag motsatt boblesortering metode som går fra høyre til venstre
+    // Oppgave 2
 }
