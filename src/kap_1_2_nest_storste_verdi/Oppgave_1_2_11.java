@@ -1,6 +1,6 @@
-package nest_storste_verdi;
+package kap_1_2_nest_storste_verdi;
 
-public class _1_2_11 {
+public class Oppgave_1_2_11 {
     /*
     DEFINISJONER:
     Komplett - Samme som perfekt, men nederste nivå trenger ikke å ha alle nodene det er plass til. Det må også ligge tett med noder fra venstre.

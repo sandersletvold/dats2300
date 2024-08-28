@@ -1,6 +1,6 @@
-package ordnede_tabeller;
+package kap_1_3_ordnede_tabeller;
 
-public class _1_3_2 {
+public class Oppgave_1_3_2 {
     // Oppgave 1
     // [3,1], [3,2], [5,4], [5,1], [5,2], [4,1], [4,2], [7,6], [7,1], [7,2], [6,1], [6,2], [8,1], [8,2]
     // Dette blir 14 inversjoner

@@ -1,27 +1,28 @@
-package algoritmer_og_effektivitet;
+package kap_1_1_algoritmer_og_effektivitet;
 
 import java.util.Arrays;
 
-public class _1_1_3 {
+public class Oppgave_1_1_3 {
     public static void main(String[] args) {
-        int[] tabell = {6,3};
-        int fakultet = 5;
-        System.out.println("Oppgave 5 "+Arrays.toString(minmaks(tabell)));
-        System.out.println("Oppgave 6 "+fakultet(fakultet));
+        int[] a = {1,2};
+        int[] b = {2,1};
+        System.out.println(Arrays.toString(minmaks(a)));
+        System.out.println(Arrays.toString(minmaks(b)));
+
+        System.out.println(fakultet(5));
     }
 
     // Oppgave 5
-    public static int[] minmaks(int[] tabell) {
+    public static int[] minmaks(int[] a) {
         int m1 = 0;
         int m2 = 1;
-        if (tabell[m1] < tabell[m2]){
+        if (a[m1] < a[m2]){
             int[] b = {m1, m2};
             return b;
         } else {
             int[] b = {m2, m1};
             return b;
         }
-        // Metoden bruker kun 1 sammenligning da den sjekker om m1 er mindre enn m2. Hvis ikke dette stemmer vet vi m1 er større enn m2.
     }
 
     // Oppgave 6

@@ -1,11 +1,12 @@
-package algoritmer_og_effektivitet;
+package kap_1_1_algoritmer_og_effektivitet;
 
-public class _1_1_5 {
+public class Oppgave_1_1_5 {
     public static void main(String[] args) {
-        int[] a = {6};
+        int[] a = {5};
         System.out.println(maks(a));
     }
 
+    // Oppgave 1
     public static int maks(int[] a) {  // versjon 3 av maks-metoden
         int sist = a.length - 1;       // siste posisjon i tabellen
         int m = 0;                     // indeks til største verdi
@@ -27,9 +28,8 @@ public class _1_1_5 {
                     m = i;                   // m oppdateres
                 }
             }
-    } // maks
 
-    // Oppgave 1
+    }
     // Hvis a har lengde på 1 vil svaret alltid bli 0 da det er eneste indexen, som også da vil være den største.
     // Hvis a har lengde på 0 vil vi få feilmelding da det ikke er noen verdier og dermed er ingen størst.
 }
