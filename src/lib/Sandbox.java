@@ -3,7 +3,7 @@ package lib;
 public class Sandbox {
     public static int[] turnering(int[] a) {
         int[] b = new int[a.length*2];      // Oppretter nytt array med plass til turneringen
-        b[0] = -1;      // Setter index 0 til -1 for å markere at denne ikke brukes
+        b[0] = 0;      // Setter index 0 til -1 for å markere at denne ikke brukes
 
         int i = b.length-1;     // Lagrer bakerste index i det nye arrayet
         for (int j = a.length-1; j >= 0; j--) {     // Kjører gjennom det gamle arrayet
@@ -21,16 +21,26 @@ public class Sandbox {
         return b;
     }
 
-    public static void formaterTurnering(int[] a) {
+    public static void turneringFormatering(int[] a) {
+        int j = 1;
         for (int i = 0; i<a.length; i++) {
+            if (i == j) {
+                System.out.println();
+                j *= 2;
+            }
+
             if (i == 0 || i == 1) {
-                System.out.print("["+a[i]+"], ");
+                System.out.print("["+a[i]+"] ");
             } else if (i % 2 != 0) {
                 System.out.print(a[i]+"] ");
             } else {
                 System.out.print("["+a[i]+", ");
             }
         }
+    }
+
+    public static void turneringVinner(int[] a) {
+
     }
 
     public static int binaerSok(int[] a, int x) {
