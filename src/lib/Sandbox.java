@@ -40,7 +40,17 @@ public class Sandbox {
     }
 
     public static void turneringVinner(int[] a) {
-
+        System.out.print("["+a[1]+"] ");
+        int j = a[1];
+        int i = 2;
+        for ( ; i<a.length; i*=2) {
+            if (a[i] == j) {
+                System.out.print("["+a[i]+", "+a[i+1]+"] ");
+            } else if (a[i+1] == j) {
+                System.out.print("["+a[i]+", "+a[i+1]+"] ");
+                i++;
+            }
+        }
     }
 
     public static int binaerSok(int[] a, int x) {
