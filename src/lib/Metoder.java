@@ -177,7 +177,7 @@ public class Metoder {
     }
 
     // Søker etter en verdi i et array og returner indexen eller hvor indexen skulle vært med - foran.
-    public static int linearSok(int[] a, int verdi) {
+    public static int linaerSok(int[] a, int verdi) {
         if (a.length == 0 || verdi > a[a.length-1]) {
             return -(a.length + 1);
         }
