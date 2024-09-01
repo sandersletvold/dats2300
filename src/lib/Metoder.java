@@ -161,6 +161,22 @@ public class Metoder {
         a[j] = temp;
     }
 
+    // Sjekker om det oppgis gyldige fra og til verdier i forbindelse med søk i array
+    public static void fratilKontroll(int tablengde, int fra, int til) {
+        if (fra < 0) {
+            throw new ArrayIndexOutOfBoundsException
+                    ("fra(" + fra + ") er negativ!");
+        }
+        if (til > tablengde) {
+            throw new ArrayIndexOutOfBoundsException
+                    ("til(" + til + ") > tablengde(" + tablengde + ")");
+        }
+        if (fra > til) {
+            throw new IllegalArgumentException
+                    ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+        }
+    }
+
 
 
     /* KAPITTEL 1.3 */
@@ -185,5 +201,34 @@ public class Metoder {
         for( ; a[i] < verdi; i++);
 
         return verdi == a[i] ? i : -(i+1);
+    }
+
+    // Binærsøk som bruker fra og til
+    // {1, 3, 4, 4, 5, 7, 7, 8, 9, 10, 10, 12, 15, 15, 15}
+    public static int binaersok(int[] a, int fra, int til, int verdi) {
+        fratilKontroll(a.length,fra,til);
+        int v = fra;
+        int h = til - 1;
+
+        while (v < h) {
+            int m = (v + h)/2;
+            if (verdi > a[m]) {
+                v = m + 1;
+            } else {
+                h = m;
+            }
+        }
+
+        if (h < v || verdi < a[v]) {
+            return -(v + 1);
+        } else if (verdi == a[v]) {
+            return v;
+        } else {
+            return -(v + 2);
+        }
+    }
+
+    public static int binaersok(int[] a, int verdi) {
+        return binaersok(a, 0, a.length, verdi);
     }
 }
