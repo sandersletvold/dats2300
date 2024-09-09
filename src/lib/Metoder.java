@@ -204,7 +204,6 @@ public class Metoder {
     }
 
     // Binærsøk som bruker fra og til
-    // {1, 3, 4, 4, 5, 7, 7, 8, 9, 10, 10, 12, 15, 15, 15}
     public static int binaersok(int[] a, int fra, int til, int verdi) {
         fratilKontroll(a.length,fra,til);
         int v = fra;
@@ -228,7 +227,30 @@ public class Metoder {
         }
     }
 
+    // Binærsøk for hele tabeller
     public static int binaersok(int[] a, int verdi) {
         return binaersok(a, 0, a.length, verdi);
+    }
+
+    // Parter med fra og til intervall
+    public static int parter(int[] a, int fra, int til, int skilleverdi) {
+        fratilKontroll(a.length, fra, til);
+        return parter0(a, fra, til - 1, skilleverdi);
+    }
+
+    // Parter hvor hele tabellen kalles
+    public static int parter(int[] a, int skilleverdi) {
+        return parter0(a, 0, a.length - 1, skilleverdi);
+    }
+
+    // Privat parter metode med logikken bak hvordan det funker
+    private static int parter0(int[] a, int v, int h, int skilleverdi) {
+        while (true) {
+            while (v <= h && a[v] < skilleverdi) v++;
+            while (v <= h && a[h] >= skilleverdi) h--;
+
+            if (v < h) bytt(a,v++,h--);
+            else  return v;
+        }
     }
 }
