@@ -127,34 +127,34 @@ public class Sandbox {
         merge(a, v, h);
     }
 
-    public static void merge(int[] a, int[] v, int[] h) {
-        int vLengde = a.length/2;
-        int hLengde = a.length - vLengde;
+    public static void merge(int[] a, int[] venstre, int[] høyre) {
+        int venstreLengde = a.length/2;
+        int høyreLengde = a.length - venstreLengde;
 
         int i = 0;
-        int vIndex = 0;
-        int hIndex = 0;
+        int j = 0;
+        int k = 0;
 
-        while (vIndex < vLengde && hIndex < hLengde) {
-            if (v[vIndex] < h[hIndex]) {
-                a[i] = v[vIndex];
+        while (j < venstreLengde && k < høyreLengde) {
+            if (venstre[j] < høyre[k]) {
+                a[i] = venstre[j];
                 i++;
-                vIndex++;
+                j++;
             } else {
-                a[i] = h[hIndex];
+                a[i] = høyre[k];
                 i++;
-                hIndex++;
+                k++;
             }
         }
-        while (vIndex < vLengde) {
-            a[i] = v[vIndex];
+        while (j < venstreLengde) {
+            a[i] = venstre[j];
             i++;
-            vIndex++;
+            j++;
         }
-        while (hIndex < hLengde) {
-            a[i] = h[hIndex];
+        while (k < høyreLengde) {
+            a[i] = høyre[k];
             i++;
-            hIndex++;
+            k++;
         }
     }
 }
