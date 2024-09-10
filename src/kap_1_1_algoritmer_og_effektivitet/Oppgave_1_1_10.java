@@ -1,6 +1,6 @@
 package kap_1_1_algoritmer_og_effektivitet;
 
-import lib.Metoder;
+import lib.Tabell;
 
 public class Oppgave_1_1_10 {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Oppgave_1_1_10 {
         int n = 200_000; // tabellstørrelse
         int antall = 2_000; // gjentagelser
         long tid = 0;                    // for tidsmåling
-        int a[] = Metoder.randPerm(n);           // en permutasjon av 1, . .  n
+        int a[] = Tabell.randPerm(n);           // en permutasjon av 1, . .  n
 
         tid = System.currentTimeMillis();    // leser av klokken
         for (int i = 0; i < antall; i++) kostnader(a);

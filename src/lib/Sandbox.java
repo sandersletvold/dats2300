@@ -53,7 +53,7 @@ public class Sandbox {
         }
     }
 
-    public static int binaerSok(int[] a, int x) {
+    public static int binærsok(int[] a, int x) {
         int high = a.length-1;
         int low = 0;
         int mid = (low+high)/2;
@@ -69,5 +69,92 @@ public class Sandbox {
             mid = (low+high)/2;
         }
         return -1;
+    }
+
+    public static void quicksort(int[] a, int fra, int til) {
+        if (til <= fra) {
+            return;
+        }
+        int pivot = partisjon(a, fra, til);
+        quicksort(a, fra, pivot-1);
+        quicksort(a, pivot+1, til);
+    }
+
+    public static void quicksort(int[] a) {
+        quicksort(a, 0, a.length-1);
+    }
+
+    private static int partisjon(int[] a, int fra, int til) {
+        int pivot = a[til];
+        int i = fra-1;
+
+        for (int j = fra; j <= til-1; j++) {
+            if (a[j] < pivot) {
+                i++;
+                Tabell.bytt(a, j, i);
+            }
+        }
+
+        i++;
+        Tabell.bytt(a, i, til);
+
+        return i;
+    }
+
+    public static void mergesort(int[] a) {
+        if (a.length <= 1) {
+            return;
+        }
+
+        int m = a.length / 2;
+
+        int[] v = new int[m];
+        int[] h = new int[a.length-m];
+
+        int i = 0;
+        int j = 0;
+
+        for ( ; i < a.length; i++) {
+            if (i < m) {
+                v[i] = a[i];
+            } else {
+                h[j] = a[i];
+                j++;
+            }
+        }
+        mergesort(v);
+        mergesort(h);
+        merge(a, v, h);
+    }
+
+    public static void merge(int[] a, int[] v, int[] h) {
+        int vLengde = a.length/2;
+        int hLengde = a.length - vLengde;
+
+        int i = 0;
+        int vIndex = 0;
+        int hIndex = 0;
+
+        while (vIndex < vLengde && hIndex < hLengde) {
+            if (v[vIndex] < h[hIndex]) {
+                a[i] = v[vIndex];
+                i++;
+                vIndex++;
+            } else {
+                a[i] = h[hIndex];
+                i++;
+                hIndex++;
+            }
+        }
+        while (vIndex < vLengde) {
+            a[i] = v[vIndex];
+            i++;
+            vIndex++;
+        }
+        while (hIndex < hLengde) {
+            a[i] = h[hIndex];
+            i++;
+            hIndex++;
+        }
     }
 }

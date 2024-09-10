@@ -1,17 +1,17 @@
 package kap_1_2_nest_storste_verdi;
 
-import lib.Metoder;
+import lib.Tabell;
 
 
 public class Oppgave_1_2_2 {
     public static void main(String[] args) {
-        int[] a = Metoder.randPerm(10);
+        int[] a = Tabell.randPerm(10);
         for (int i : a) {
             System.out.print(i+" ");
         }
 
         // Oppgave 2
-        System.out.println("\n"+Metoder.maks(a));
+        System.out.println("\n"+ Tabell.maks(a));
 
         // Oppgave 3
         char[] c = {'D','H','O','J','B','Q','P','C','I','S'};
@@ -20,7 +20,7 @@ public class Oppgave_1_2_2 {
         }
 
         System.out.println();
-        Metoder.bytt(c, 2,4);
+        Tabell.bytt(c, 2,4);
         for (char i : c) {
             System.out.print(i+" ");
         }

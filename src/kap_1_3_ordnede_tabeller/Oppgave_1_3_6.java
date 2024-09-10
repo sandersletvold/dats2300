@@ -1,13 +1,13 @@
 package kap_1_3_ordnede_tabeller;
 
-import lib.Metoder;
+import lib.Tabell;
 
 public class Oppgave_1_3_6 {
     public static void main(String[] args) {
-        int[] a = Metoder.randPerm(100);
-        Metoder.bobleSortering(a);
+        int[] a = Tabell.randPerm(100);
+        Tabell.boblesortering(a);
         // Oppgave 1
-        System.out.print("Oppgave 1\n"+Metoder.binaersok(a, 63)+" ");
+        System.out.print("Oppgave 1\n"+ Tabell.binærsøk(a, 63)+" ");
         System.out.print(binærsøk1(a, 0, a.length, 63)+" ");
         System.out.print(binærsøk2(a, 0, a.length, 63)+"\n");
 
@@ -26,8 +26,8 @@ public class Oppgave_1_3_6 {
 
         // Oppgave 4
         System.out.println("\n\nOppgave 4");
-        System.out.print(Metoder.binaersok(c, 0, c.length, 4)+" "); // Første
-        System.out.print(Metoder.binaersok(c, 0, c.length, 15)+" "); // Første
+        System.out.print(Tabell.binærsøk(c, 0, c.length, 4)+" "); // Første
+        System.out.print(Tabell.binærsøk(c, 0, c.length, 15)+" "); // Første
 
         // Oppgave 5
         /* Ved (v+h+1)/2 og tabellen er 11 vil midten bli:
@@ -43,7 +43,7 @@ public class Oppgave_1_3_6 {
     // 1, 3, 4, 4, 5, 7, 7, 7, 7, 8, 9, 10, 10, 12, 15, 15, 15
     public static int binærsøk1(int[] a, int fra, int til, int verdi)
     {
-        Metoder.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+        Tabell.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
         int v = fra, h = til - 1;  // v og h er intervallets endepunkter
 
         while (v <= h)    // fortsetter så lenge som a[v:h] ikke er tom
@@ -61,7 +61,7 @@ public class Oppgave_1_3_6 {
 
     public static int binærsøk2(int[] a, int fra, int til, int verdi)
     {
-        Metoder.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+        Tabell.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
         int v = fra, h = til - 1;    // v og h er intervallets endepunkter
 
         while (v <= h)  // fortsetter så lenge som a[v:h] ikke er tom

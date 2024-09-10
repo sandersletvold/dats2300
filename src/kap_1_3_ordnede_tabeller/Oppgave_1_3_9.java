@@ -1,22 +1,45 @@
 package kap_1_3_ordnede_tabeller;
 
-import lib.Metoder;
+import lib.Tabell;
 
 import java.util.Arrays;
+
+import static lib.Tabell.bytt;
 
 public class Oppgave_1_3_9 {
     public static void main(String[] args) {
         // Oppgave 7
-        int[] a = Metoder.randPerm(30);
+        int[] a = Tabell.randPerm(30);
         Kode.treDeler(a);
         System.out.println(Arrays.toString(a));
+
+        // Oppgave 11
+        int[] b = Tabell.randPerm(20);           // en tilfeldig permutasjon
+        Tabell.kvikksortering(b);                // sorterer
+        System.out.println(Arrays.toString(b));  // skriver ut
+
+        // Oppgave 12
+        long t1 = System.currentTimeMillis();
+        int[] c = Tabell.randPerm(100000);
+        Tabell.kvikksortering(c);
+        System.out.println(System.currentTimeMillis()-t1);
+
+        long t2 = System.currentTimeMillis();
+        int[] d = Tabell.randPerm(100000);
+        Kode.innsettingssortering(d);
+        System.out.println(System.currentTimeMillis()-t2);
+
+        long t3 = System.currentTimeMillis();
+        int[] e = Tabell.randPerm(100000);
+        Arrays.sort(e);
+        System.out.println(System.currentTimeMillis()-t3);
     }
 }
 
 class Kode {
     // Oppgave 7
     public static void treDeler(int[] tabell) {
-        Metoder.parter(tabell, 11);
+        Tabell.parter(tabell, 11);
         int skille = 0;
         for (int i = 0; i < tabell.length; i++) {
             if (tabell[i] > 10) {
@@ -24,9 +47,27 @@ class Kode {
                 break;
             }
         }
-
-        Metoder.parter(tabell, skille, tabell.length, 21);
+        Tabell.parter(tabell, skille, tabell.length, 21);
     }
+
+    // Oppgave 12
+    public static void innsettingssortering(int[] a)
+    {
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            int verdi = a[i], j = i - 1;      // verdi er et tabellelemnet, j er en indeks
+            for (; j >= 0 && verdi < a[j]; j--) a[j+1] = a[j];  // sammenligner og flytter
+            a[j + 1] = verdi;                 // j + 1 er rett sortert plass
+        }
+    }
+
+    // Oppgave 13
+
+    // Oppgave 15
+
+    // Oppgave 16
+
+    // Oppgave 17
 }
 
 class Kommentarer {

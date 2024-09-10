@@ -1,17 +1,17 @@
 package kap_1_3_ordnede_tabeller;
 
 import java.util.Arrays;
-import lib.Metoder;
+import lib.Tabell;
 
 public class Oppgave_1_3_3 {
     public static void main(String[] args) {
-        int[] a = Metoder.randPerm(10);
+        int[] a = Tabell.randPerm(10);
         int[] b = a.clone();
 
         System.out.println("Usortert tallrekke: "+Arrays.toString(a));
         omvendtBoblesortering(b);
         // Oppgave 1
-        Metoder.bobleSortering(a);
+        Tabell.boblesortering(a);
 
         System.out.println("Boblesortering: "+Arrays.toString(a));
         System.out.println("Omvendt boblesortering: "+Arrays.toString(b));
@@ -39,7 +39,7 @@ public class Oppgave_1_3_3 {
         for (int n = 0; n < a.length-1; n++) {          // n reduseres med 1 hver gang
             for (int i = a.length-1; i > n; i--) {                // går fra 1 til n
                 if (a[i] < a[i-1]) {
-                    Metoder.bytt(a, i-1, i);  // sammenligner/bytter
+                    Tabell.bytt(a, i-1, i);  // sammenligner/bytter
                 }
             }
         }

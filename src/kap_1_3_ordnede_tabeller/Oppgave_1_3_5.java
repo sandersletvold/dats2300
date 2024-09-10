@@ -1,6 +1,6 @@
 package kap_1_3_ordnede_tabeller;
 
-import lib.Metoder;
+import lib.Tabell;
 
 import java.util.Arrays;
 
@@ -11,11 +11,11 @@ public class Oppgave_1_3_5 {
         // Oppgave 2
         // Søker i a etter: 2, 15, 16, 40, 41
         System.out.println("Oppgave 2");
-        System.out.print(" "+ Metoder.linaerSok(a, 2));
-        System.out.print(" "+ Metoder.linaerSok(a, 15));
-        System.out.print(" "+ Metoder.linaerSok(a, 16));
-        System.out.print(" "+ Metoder.linaerSok(a, 40));
-        System.out.print(" "+ Metoder.linaerSok(a, 41));
+        System.out.print(" "+ Tabell.lineærsøk(a, 2));
+        System.out.print(" "+ Tabell.lineærsøk(a, 15));
+        System.out.print(" "+ Tabell.lineærsøk(a, 16));
+        System.out.print(" "+ Tabell.lineærsøk(a, 40));
+        System.out.print(" "+ Tabell.lineærsøk(a, 41));
 
         // Oppgave 4
         // Søker i a etter: 5, 8, 14, 18, 27, 36, 40, 42
