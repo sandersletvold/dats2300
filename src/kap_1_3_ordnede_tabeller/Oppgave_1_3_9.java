@@ -5,9 +5,11 @@ import lib.Tabell;
 import java.util.Arrays;
 
 import static lib.Tabell.bytt;
+import static lib.Tabell.randPerm;
 
 public class Oppgave_1_3_9 {
     public static void main(String[] args) {
+        /*
         // Oppgave 7
         int[] a = Tabell.randPerm(30);
         Kode.treDeler(a);
@@ -33,6 +35,12 @@ public class Oppgave_1_3_9 {
         int[] e = Tabell.randPerm(100000);
         Arrays.sort(e);
         System.out.println(System.currentTimeMillis()-t3);
+         */
+
+        // Oppgave 15
+        int[] a = {1,4,3,6,7,3,6,2,4};
+        System.out.println(Kode.nyParter0(a, 0, a.length-1, 7));
+        System.out.println(Arrays.toString(a));
     }
 }
 
@@ -61,14 +69,38 @@ class Kode {
         }
     }
 
-    // Oppgave 13
-
     // Oppgave 15
+    public static int parter0(int[] a, int v, int h, int skilleverdi) {
+        while (true) {
+            while (v <= h && a[v] < skilleverdi) {
+                v++;
+            }
 
-    // Oppgave 16
+            while (v <= h && a[h] >= skilleverdi) {
+                h--;
+            }
 
-    // Oppgave 17
+            if (v < h) {
+                bytt(a,v++,h--);
+            } else {
+                return v;
+            }
+        }
+    }
+
+    public static int nyParter0(int[] a, int v, int h, int skilleverdi) {
+        while (v <= h) { // n
+            if (a[v] < skilleverdi) { // n
+                v++;
+            } else {
+                Tabell.bytt(a,v,h--); // x
+            }
+        }
+        return v;
+    }
 }
+
+
 
 class Kommentarer {
     // Oppgave 3
