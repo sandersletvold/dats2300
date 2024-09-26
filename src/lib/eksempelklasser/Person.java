@@ -7,6 +7,8 @@ public class Person implements Comparable<Person> {
     private final String etternavn;       // personens etternavn
 
     public Person(String fornavn, String etternavn) {   // konstruktør
+        Objects.requireNonNull(fornavn,"fornavn kan ikke være null");
+        Objects.requireNonNull(etternavn,"etternavn kan ikke være null");
         this.fornavn = fornavn;
         this.etternavn = etternavn;
     }
@@ -37,6 +39,15 @@ public class Person implements Comparable<Person> {
         } else {
             return compareTo((Person)o) == 0;
         }
+    }
+
+    // Oppgave 2e, endre navn til equals for å ta i bruk
+    public boolean equals1(Object o) {        // ny versjon av equals
+        if (o == this) return true;           // er det samme objekt?
+        if (o == null) return false;          // null-argument
+        if (getClass() != o.getClass()) return false;  // er det rett klasse?
+        final Person p = (Person)o;           // typekonvertering
+        return etternavn.equals(p.etternavn) && fornavn.equals(p.fornavn);
     }
 
     public int hashCode() {
