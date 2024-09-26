@@ -41,7 +41,7 @@ public class Person implements Comparable<Person> {
         }
     }
 
-    // Oppgave 2e, endre navn til equals for å ta i bruk
+    // Oppgave 2e
     public boolean equals1(Object o) {        // ny versjon av equals
         if (o == this) return true;           // er det samme objekt?
         if (o == null) return false;          // null-argument
@@ -50,12 +50,19 @@ public class Person implements Comparable<Person> {
         return etternavn.equals(p.etternavn) && fornavn.equals(p.fornavn);
     }
 
+    // Oppgave 2f
+    public boolean equals(Person p) {        // Person som parametertype
+        if (p == this) return true;           // er det samme objekt?
+        if (p == null) return false;          // null-argument
+        return etternavn.equals(p.etternavn) && fornavn.equals(p.fornavn);
+    }
+
     public int hashCode() {
         return Objects.hash(etternavn, fornavn);
     }
 
     public String toString() {
-        return fornavn + " " + etternavn;
+        return String.join(" ", fornavn, etternavn);
     }
 
 } // class Person

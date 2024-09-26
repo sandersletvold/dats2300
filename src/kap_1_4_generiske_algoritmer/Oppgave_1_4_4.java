@@ -4,10 +4,13 @@ import lib.Tabell;
 import lib.eksempelklasser.*;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Oppgave_1_4_4 {
     public static void main(String[] args) {
-        //oppgave1();
+        oppgave1();
         oppgave2();
     }
 
@@ -65,5 +68,18 @@ public class Oppgave_1_4_4 {
         // Oppgave 2e
         /*  Alternativ equals metode i Personklassen.
         */
+
+        // Oppgave 2f
+        /*  equals metode som tar inn Person p er lagt i Person klassen.
+        */
+
+        // Oppgave 2g
+        /*  Bruker String.join i return for toString i Personklassen.
+        */
+
+        // Oppgave 2h
+        Stream s = Arrays.stream(p);
+        Optional<Person> resultat = s.max(Comparator.naturalOrder());
+        resultat.ifPresent(System.out::println);
     }
 }
