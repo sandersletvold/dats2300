@@ -39,6 +39,5 @@ public class Oppgave_1_5_1 {
     }
 
     // Oppgave 14
-
 }
 
