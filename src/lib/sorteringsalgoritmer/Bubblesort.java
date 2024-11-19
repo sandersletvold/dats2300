@@ -12,9 +12,9 @@ public class Bubblesort {
     }
 
     public static void bubblesort(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 1; j < a.length; j++) {
-                if (a[j-1] > a[j]) {
+        for (int i = 1; i < a.length; i++) {    // Hver gang denne kjører havner 1 element på rett plass
+            for (int j = 1; j < a.length; j++) {        // Setter første elem bakerst, deretter nest bakerst neste løkke
+                if (a[j-1] > a[j]) {            // Sammenligner naboverdier
                     bytt(a, j-1, j);
                 }
             }
@@ -27,3 +27,4 @@ public class Bubblesort {
         a[j] = tmp;
     }
 }
+
