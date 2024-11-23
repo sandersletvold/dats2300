@@ -81,8 +81,10 @@ public class Tabell {
         int nm = 1;     // nm er posisjonen til nest største verdi
 
         // bytter om m og nm hvis a[1] er større enn a[0]
-        if (a[1] > a[0]) { m = 1; nm = 0; }
-
+        if (a[1] > a[0]) {
+            m = 1;
+            nm = 0;
+        }
         int maksverdi = a[m];                // største verdi
         int nestmaksverdi = a[nm];           // nest største verdi
 
@@ -100,7 +102,6 @@ public class Tabell {
                 }
             }
         }
-
         return new int[] {m,nm};    // n i posisjon 0, nm i posisjon 1
     }
 

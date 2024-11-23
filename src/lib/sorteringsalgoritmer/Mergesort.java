@@ -54,14 +54,12 @@ public class Mergesort {
                 k++;
             }
         }
-
         // Kopier eventuelle gjenværende elementer fra venstre array.
         while (j < venstreLengde) {
             a[i] = venstre[j];
             i++;
             j++;
         }
-
         // Kopier eventuelle gjenværende elementer fra høyre array.
         while (k < høyreLengde) {
             a[i] = høyre[k];
